@@ -1,7 +1,5 @@
 `timescale 1ns/1ps
 `default_nettype none
-// Related reference: https://gitlab.symbioticeda.com/rakshithsuresh2001/systolic_array
-// Reference author: Rakshith Suresh (8x8 weight-stationary architecture).
 // Independently reconstructed 8x8 signed INT8 implementation, C=A*B.
 // Owner-reported physical metrics are from an earlier run, not this RTL.
 // B[k,c] is stationary in PE[k,c]. A[r,k] enters row k on cycle r+k.

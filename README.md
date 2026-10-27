@@ -115,8 +115,7 @@ a real final GDSII. It archives raw results/reports/logs with a SHA-256 manifest
 ## Reference and attribution
 
 [Rakshith Suresh's systolic-array project](https://gitlab.symbioticeda.com/rakshithsuresh2001/systolic_array)
-is an architectural reference for the 8×8 weight-stationary array. The reference
-URL is also credited in the top-level RTL. This repository contains its own RTL,
+is an architectural reference for the 8×8 weight-stationary array. This repository contains its own RTL,
 testbench, and flow configuration.
 
 The flow follows the official
