@@ -38,7 +38,7 @@ for command in commands:
     if result.returncode:
         (REPORTS/'rtl_simulation.log').write_text('\n'.join(log))
         raise SystemExit(result.returncode)
-output='\n'.join(log)
+output='\n'.join(log).rstrip()+'\n'
 assert 'PASS matrices=256 output_checks=4096 compute_cycles=10' in output
 (REPORTS/'rtl_simulation.log').write_text(output)
 report={'status':'PASS','seed':20261027,'matrices':256,'output_checks':4096,

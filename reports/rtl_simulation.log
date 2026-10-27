@@ -5,4 +5,3 @@ $ vvp build/sim
 PASS matrices=256 output_checks=4096 compute_cycles=10 seed=20261027
 PASS control: reset, reset-during-compute, busy-write/start rejection, repeated operations, done pulse
 tb/tb_systolic.sv:78: $finish called at 231271000 (1ps)
-
