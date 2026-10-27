@@ -39,8 +39,8 @@ module systolic_array (
             done <= 0;
             if (busy) begin
                 for (j=0; j<N; j=j+1) begin
-                    if (int'(step)>=N+j && int'(step)<2*N+j)
-                        result_mem[(int'(step)-N-j)*N+j] <= psum_bus[N][j];
+                    if ($unsigned(step)>=N+j && $unsigned(step)<2*N+j)
+                        result_mem[($unsigned(step)-N-j)*N+j] <= psum_bus[N][j];
                 end
                 if (step == LAST_STEP) begin
                     busy <= 0;
@@ -61,8 +61,8 @@ module systolic_array (
     genvar k, c;
     generate
         for (k=0; k<N; k=k+1) begin: rows
-            assign a_bus[k][0] = (int'(step)>=k && int'(step)<k+N)
-                ? a_mem[(int'(step)-k)*N+k] : 8'sd0;
+            assign a_bus[k][0] = ($unsigned(step)>=k && $unsigned(step)<k+N)
+                ? a_mem[($unsigned(step)-k)*N+k] : 8'sd0;
             for (c=0; c<N; c=c+1) begin: cols
                 mac_pe pe (
                     .clk(clk), .rst_n(rst_n), .clear(clear), .enable(busy),

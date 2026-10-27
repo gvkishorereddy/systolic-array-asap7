@@ -15,7 +15,7 @@
   "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
   "rtl_sha256": {
     "rtl/mac_pe.sv": "1e2a09432362f15b52465545fe5a44f6d2399898f0ec0c35990c47054fb30db8",
-    "rtl/systolic_array.sv": "8cd46cf28904a65f06799053cd8055e9a3c049707d11a67a62fce85d2d9e4f1a"
+    "rtl/systolic_array.sv": "b0fdb42ea99ecb8e664a27329ba19227d8272eee1072ed933d022602253883c1"
   },
   "testbench_sha256": "27a7b701be3ae39d342bc41f15a122a82de7af379f65dd69bad0b11d428a54c0",
   "verification_script_sha256": "6418c922b0c89ce1457252d4ebd215640a9aff40ca65eac7f3e352e0ad5feecc",

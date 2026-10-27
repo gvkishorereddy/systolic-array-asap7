@@ -16,6 +16,7 @@ jobs:
       - name: Check RTL structure
         run: make elaborate
       - name: Preserve verification reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: rtl-verification

@@ -7,6 +7,6 @@
   "tool_image": "ghcr.io/librelane/librelane:3.0.17",
   "rtl_sha256": {
     "rtl/mac_pe.sv": "1e2a09432362f15b52465545fe5a44f6d2399898f0ec0c35990c47054fb30db8",
-    "rtl/systolic_array.sv": "8cd46cf28904a65f06799053cd8055e9a3c049707d11a67a62fce85d2d9e4f1a"
+    "rtl/systolic_array.sv": "b0fdb42ea99ecb8e664a27329ba19227d8272eee1072ed933d022602253883c1"
   }
 }
