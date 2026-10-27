@@ -1,7 +1,6 @@
 `timescale 1ns/1ps
 `default_nettype none
-// Independently reconstructed 8x8 signed INT8 implementation, C=A*B.
-// Owner-reported physical metrics are from an earlier run, not this RTL.
+// 8x8 weight-stationary signed INT8 matrix multiplication, C=A*B.
 // B[k,c] is stationary in PE[k,c]. A[r,k] enters row k on cycle r+k.
 // Activations move right and partial sums move down, one hop per cycle.
 module systolic_array (

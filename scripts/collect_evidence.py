@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Archive real ORFS output with hashes; never generate synthetic PPA reports."""
+"""Archive ORFS layouts, reports, and logs with a SHA-256 manifest."""
 import datetime
 import hashlib
 import json
@@ -24,7 +24,7 @@ def main():
             raise SystemExit(f'Input changed since this run: {name}')
     result_dir = WORK / 'results' / NAME
     if not (result_dir / '6_final.gds').is_file():
-        raise SystemExit('Missing 6_final.gds; nothing is being presented as a completed layout.')
+        raise SystemExit('Missing final layout: 6_final.gds. Complete the physical flow first.')
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     destination = ROOT / 'evidence' / stamp
     destination.mkdir(parents=True)
@@ -38,8 +38,7 @@ def main():
     hashes = {str(p.relative_to(destination)): hashlib.sha256(p.read_bytes()).hexdigest()
               for p in sorted(destination.rglob('*')) if p.is_file()}
     (destination / 'sha256.json').write_text(json.dumps(hashes, indent=2) + '\n')
-    print(f'Archived {len(hashes)} real files to {destination}')
-    print('Review timing, DRC, and power assumptions before reporting any physical result.')
+    print(f'Archived {len(hashes)} files to {destination}')
 
 
 if __name__ == '__main__':

@@ -11,10 +11,13 @@
   "compute_cycles": 23,
   "simulation_clock_period_ns": 20,
   "simulation_compute_latency_ns": 460,
-  "note": "Simulation clock is a stimulus setting, not physical timing signoff or Fmax.",
+  "clock_definition": "Functional testbench stimulus; implementation clock is defined in flow/asap7/constraint.sdc.",
   "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
   "rtl_sha256": {
     "rtl/mac_pe.sv": "1e2a09432362f15b52465545fe5a44f6d2399898f0ec0c35990c47054fb30db8",
-    "rtl/systolic_array.sv": "60acb5062672e176c3e9dd94be1ec81a6b4eb33195eb2c0164069d243b3ed713"
-  }
+    "rtl/systolic_array.sv": "8cd46cf28904a65f06799053cd8055e9a3c049707d11a67a62fce85d2d9e4f1a"
+  },
+  "testbench_sha256": "27a7b701be3ae39d342bc41f15a122a82de7af379f65dd69bad0b11d428a54c0",
+  "verification_script_sha256": "6418c922b0c89ce1457252d4ebd215640a9aff40ca65eac7f3e352e0ad5feecc",
+  "vectors_sha256": "07f6fdcbf25e76958f011b2af3cb34212c912419c089607a54a2edc0dddc5e72"
 }

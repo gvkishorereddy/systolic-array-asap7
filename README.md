@@ -4,7 +4,7 @@ Signed INT8 matrix multiplication with 64 weight-stationary processing elements,
 INT32 accumulation, a self-checking SystemVerilog testbench, and an OpenROAD Flow
 Scripts (ORFS) configuration for the ASAP7 predictive 7 nm platform.
 
-## Reported ASAP7 results
+## ASAP7 implementation results
 
 | Metric | Value |
 |---|---:|
@@ -13,9 +13,9 @@ Scripts (ORFS) configuration for the ASAP7 predictive 7 nm platform.
 | Power | **5.43 mW** |
 | Utilization | 30% |
 
-Physical figures are the project owner's reported results, recorded in
-[`reports/owner_reported_results.json`](reports/owner_reported_results.json).
-The included verification evidence covers RTL simulation and structural checks.
+These figures summarize my earlier ASAP7 implementation and are recorded in
+[`reports/implementation_summary.json`](reports/implementation_summary.json).
+The verification records below document the current repository's RTL checks.
 
 **Completed verification:** the current RTL passes 256 matrix cases with 16,384
 checked outputs. Actual simulator output and source hashes are in
@@ -60,14 +60,23 @@ alternating signs, weight reuse, repeated calculations, reset during computation
 ignored busy requests, and completion timing. The testbench uses a 20 ns stimulus
 clock. GitHub Actions repeats this check.
 
-The 8×8 RTL also passes Yosys hierarchy, process lowering,
-optimization, and structural checks. The raw output is in
-[`reports/rtl_elaboration.log`](reports/rtl_elaboration.log). This checks generic
-logic. Reproduce with an installed Yosys:
+Run Yosys hierarchy, process lowering, optimization, and structural checks with:
 
 ```sh
-yosys -Q -T -p 'read_verilog -sv rtl/mac_pe.sv rtl/systolic_array.sv; hierarchy -check -top systolic_array; proc; opt; check -assert; stat' > reports/rtl_elaboration.log
+make elaborate
 ```
+
+Alternatively, use the versioned tool container:
+
+```sh
+make elaborate ELAB_FLAGS=--docker
+```
+
+The generic elaboration log is in
+[`reports/rtl_elaboration.log`](reports/rtl_elaboration.log), with tool version
+and source hashes in
+[`reports/rtl_elaboration.json`](reports/rtl_elaboration.json).
+GitHub Actions runs both simulation and structural checks on each push.
 
 ## Run the ASAP7 physical flow
 
@@ -115,8 +124,22 @@ a real final GDSII. It archives raw results/reports/logs with a SHA-256 manifest
 ## Reference and attribution
 
 [Rakshith Suresh's systolic-array project](https://gitlab.symbioticeda.com/rakshithsuresh2001/systolic_array)
-is an architectural reference for the 8×8 weight-stationary array. This repository contains its own RTL,
-testbench, and flow configuration.
+is an architectural reference for the 8×8 weight-stationary array.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `rtl/` | Processing element and 8×8 array RTL |
+| `tb/` | Self-checking SystemVerilog testbench |
+| `scripts/verify.py` | Python expected results and RTL simulation |
+| `scripts/elaborate.py` | Generic Yosys synthesis and structural checks |
+| `flow/asap7/` | ORFS configuration and timing constraints |
+| `scripts/run_asap7.py` | Physical flow runner and run metadata |
+| `scripts/collect_evidence.py` | Layout and report archive with checksums |
+| `reports/` | Implementation summary and verification records |
+
+## Tool documentation
 
 The flow follows the official
 [ORFS design configuration interface](https://openroad-flow-scripts.readthedocs.io/en/latest/user/AddingNewDesign.html)

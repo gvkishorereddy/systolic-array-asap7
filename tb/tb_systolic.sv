@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 module tb_systolic;
     reg clk = 0;
-    always #10 clk = ~clk; // Stimulus clock, NOT a claim about physical Fmax.
+    always #10 clk = ~clk; // 20 ns functional simulation period.
     reg rst_n = 0, load_en = 0, load_b = 0, start = 0;
     reg [5:0] load_addr = 0, result_addr = 0;
     reg signed [7:0] load_data = 0;

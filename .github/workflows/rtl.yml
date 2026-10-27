@@ -8,11 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install simulator
-        run: sudo apt-get update && sudo apt-get install -y iverilog
+        run: sudo apt-get update && sudo apt-get install -y iverilog yosys
+      - name: Check Python scripts
+        run: python3 -m py_compile scripts/*.py
       - name: Run scoreboard
         run: make test
-      - name: Preserve simulation evidence
+      - name: Check RTL structure
+        run: make elaborate
+      - name: Preserve verification reports
         uses: actions/upload-artifact@v4
         with:
-          name: rtl-simulation
-          path: reports/rtl_simulation.*
+          name: rtl-verification
+          path: reports/rtl_*

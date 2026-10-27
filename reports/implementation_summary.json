@@ -1,0 +1,10 @@
+{
+  "design": "8x8 weight-stationary INT8 systolic array",
+  "platform": "ASAP7 predictive 7 nm",
+  "record_type": "prior_implementation_summary",
+  "reproduced_with_current_flow": false,
+  "clock_frequency_mhz": 500,
+  "core_area_um2": 3903,
+  "power_mw": 5.43,
+  "utilization_percent": 30
+}

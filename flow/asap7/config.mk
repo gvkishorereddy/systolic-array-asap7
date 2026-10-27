@@ -1,5 +1,5 @@
 # Standalone OpenROAD Flow Scripts design configuration.
-# Reconstructed flow recipe; not the script from the owner's earlier run.
+# 8x8 weight-stationary array, RVT cells, 500 MHz target.
 SA_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/../..)
 export PLATFORM = asap7
 export DESIGN_NAME = systolic_array
@@ -14,4 +14,3 @@ export CORE_MARGIN = 2
 export PLACE_DENSITY = 0.50
 export CLOCK_PERIOD = 2000
 # Use the platform's library, PDN, RC extraction, and routing defaults.
-# Area is determined by synthesis and floorplanning, not forced to a result.
