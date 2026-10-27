@@ -1,12 +1,12 @@
-# 4x4 Systolic Array — ASAP7 Design Flow
+# 8x8 Systolic Array — ASAP7 Design Flow
 
-Signed INT8 matrix multiplication with 16 output-stationary processing elements,
+Signed INT8 matrix multiplication with 64 weight-stationary processing elements,
 INT32 accumulation, a self-checking SystemVerilog testbench, and an OpenROAD Flow
 Scripts (ORFS) configuration for the ASAP7 predictive 7 nm platform.
 
 ## Results and current status
 
-The project owner supplied these results from an earlier implementation:
+The project owner supplied these results from an earlier **8×8** implementation:
 
 | Metric | Owner-reported value |
 |---|---:|
@@ -23,16 +23,18 @@ timing slack are unknown. These four values are preserved separately in
 they are not generated tool reports. No GDSII, physical signoff, or measured
 latency is claimed for this reconstructed version.
 
-**Completed verification:** the current RTL passes 256 matrix cases with 4,096
+**Completed verification:** the current RTL passes 256 matrix cases with 16,384
 checked outputs. Actual simulator output and source hashes are in
 [`reports/rtl_simulation.log`](reports/rtl_simulation.log) and
 [`reports/rtl_simulation.json`](reports/rtl_simulation.json).
 
 ## Architecture and interface
 
-- A 4×4 PE grid forwards A operands right and B operands down each cycle.
-- Boundary skew aligns matching operands. Each PE accumulates one output.
-- Two 16-element register banks hold A and B; there are no SRAM macros.
+- An 8×8 PE grid holds B weights locally, forwards A operands right, and
+  propagates partial sums down each cycle.
+- Boundary skew aligns each activation with the matching partial sum.
+- A 64-entry register bank holds A, 64 PE registers hold B, and a 64-entry
+  INT32 bank captures results. There are no SRAM macros.
 - A scalar load/read interface limits pin count. Indices are row-major.
 - Writes and new starts are ignored while busy. Start wins over an idle write.
 - Reset is asynchronous and active low; reset during a calculation aborts it.
@@ -41,14 +43,15 @@ checked outputs. Actual simulator output and source hashes are in
 |---|---|
 | `clk`, `rst_n` | Clock and active-low asynchronous reset |
 | `load_en`, `load_b` | Operand write enable; select A=0 or B=1 |
-| `load_addr[3:0]`, `load_data[7:0]` | Operand index and signed INT8 value |
+| `load_addr[5:0]`, `load_data[7:0]` | Operand index and signed INT8 value |
 | `start`, `busy`, `done` | Start request, computation status, one-cycle completion |
-| `result_addr[3:0]`, `result_data[31:0]` | Output selection and signed INT32 result |
+| `result_addr[5:0]`, `result_data[31:0]` | Output selection and signed INT32 result |
 
-Load all 16 entries of each operand, pulse `start`, wait for `done`, and read
-the 16 outputs. The reconstructed controller computes for 10 cycles; host
-loading and reading are additional. This is an RTL behavior, not the latency of
-the owner's previous implementation.
+Load all 64 entries of each operand, pulse `start`, wait for `done`, and read
+the 64 outputs. Weights persist across starts and can be reused with new A
+matrices. The reconstructed controller takes 23 cycles after accepting `start`,
+including the final result capture; host loading and reading are additional.
+This is an RTL behavior, not the latency of the owner's previous implementation.
 
 ## Run functional verification
 
@@ -60,9 +63,19 @@ make test
 
 The testbench checks 8 directed and 248 seeded random matrices against Python
 integer matrix products. Cases cover signed extrema, zero and identity inputs,
-alternating signs, repeated calculations, reset during computation, ignored
-busy requests, and completion timing. A 20 ns simulation stimulus clock is
+alternating signs, weight reuse, repeated calculations, reset during computation,
+ignored busy requests, and completion timing. A 20 ns simulation stimulus clock is
 used; it does not establish physical Fmax. GitHub Actions repeats this check.
+
+The reconstructed 8×8 RTL also passes Yosys hierarchy, process lowering,
+optimization, and structural checks. The raw output is in
+[`reports/rtl_elaboration.log`](reports/rtl_elaboration.log). This checks generic
+logic; it is not ASAP7 technology mapping or physical implementation. Reproduce
+with an installed Yosys:
+
+```sh
+yosys -Q -T -p 'read_verilog -sv rtl/mac_pe.sv rtl/systolic_array.sv; hierarchy -check -top systolic_array; proc; opt; check -assert; stat' > reports/rtl_elaboration.log
+```
 
 ## Run the ASAP7 physical flow
 
@@ -116,7 +129,7 @@ timing, DRC, extraction, and power assumptions before making signoff claims.
 [Rakshith Suresh's systolic-array project](https://gitlab.symbioticeda.com/rakshithsuresh2001/systolic_array)
 is the reference identified by the project owner. It implements an 8×8
 weight-stationary architecture. This repository contains separately written
-4×4 output-stationary RTL and does not copy the reference's source or reports.
+8×8 weight-stationary RTL and does not copy the reference's source or reports.
 Its reported PPA is not evidence for this implementation. The reference URL is
 also credited in the top-level RTL.
 
@@ -125,6 +138,11 @@ The flow follows the official
 and [flow variables](https://openroad-flow-scripts.readthedocs.io/en/latest/user/FlowVariables.html).
 The time-unit setting is documented in the
 [ASAP7 library](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/blob/64939f3717ad7c694199ba04cb98924b98022868/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib#L41).
+
+The initial commit used a 4×4 output-stationary reconstruction. The owner later
+confirmed that the reported results belong to an 8×8 array; the active RTL,
+tests, configuration, and results record were corrected accordingly. Neither
+revision has reproduced the owner-reported physical results.
 
 ## License
 

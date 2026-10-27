@@ -1,0 +1,1695 @@
+
+-- Running command `read_verilog -sv rtl/mac_pe.sv rtl/systolic_array.sv; hierarchy -check -top systolic_array; proc; opt; check -assert; stat' --
+
+1. Executing Verilog-2005 frontend: rtl/mac_pe.sv
+Parsing SystemVerilog input from `rtl/mac_pe.sv' to AST representation.
+Generating RTLIL representation for module `\mac_pe'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/systolic_array.sv
+Parsing SystemVerilog input from `rtl/systolic_array.sv' to AST representation.
+Generating RTLIL representation for module `\systolic_array'.
+Warning: Replacing memory \result_mem with list of registers. See rtl/systolic_array.sv:39
+Warning: Replacing memory \a_mem with list of registers. See rtl/systolic_array.sv:38
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \systolic_array
+Used module:     \mac_pe
+
+3.2. Analyzing design hierarchy..
+Top module:  \systolic_array
+Used module:     \mac_pe
+Removed 0 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$1124 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$1124 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$1097 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$1097 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$1070 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$1070 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$1043 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$1043 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$1016 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$1016 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$989 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$989 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$962 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$962 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:67$935 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:67$935 in module systolic_array.
+Removed 1 dead cases from process $proc$rtl/systolic_array.sv:83$932 in module systolic_array.
+Marked 1 switch rules as full_case in process $proc$rtl/systolic_array.sv:83$932 in module systolic_array.
+Marked 22 switch rules as full_case in process $proc$rtl/systolic_array.sv:32$348 in module systolic_array.
+Marked 2 switch rules as full_case in process $proc$rtl/mac_pe.sv:22$2 in module mac_pe.
+Removed a total of 9 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 181 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+Found async reset \rst_n in `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~33 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1158'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1157'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1156'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1155'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1154'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1153'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1152'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:80$1151'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1150'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1149'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1148'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1147'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1146'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1145'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1144'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1143'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1142'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1141'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1140'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1139'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1138'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1137'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1136'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1135'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$345_DATA[7:0]$1130
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1123'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1122'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1121'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1120'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1119'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1118'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1117'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1116'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1115'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1114'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1113'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1112'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1111'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1110'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1109'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1108'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$344_DATA[7:0]$1103
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1096'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1095'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1094'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1093'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1092'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1091'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1090'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1089'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1088'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1087'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1086'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1085'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1084'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1083'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1082'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1081'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$343_DATA[7:0]$1076
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1069'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1068'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1067'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1066'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1065'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1064'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1063'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1062'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1061'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1060'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1059'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1058'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1057'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1056'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1055'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1054'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$342_DATA[7:0]$1049
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1042'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1041'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1040'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1039'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1038'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1037'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1036'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1035'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1034'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1033'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1032'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1031'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1030'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1029'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1028'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1027'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$341_DATA[7:0]$1022
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1015'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1014'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1013'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1012'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1011'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1010'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1009'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1008'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1007'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1006'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1005'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1004'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1003'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1002'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$1001'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$1000'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$340_DATA[7:0]$995
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$988'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$987'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$986'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$985'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$984'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$983'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$982'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$981'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$980'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$979'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$978'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$977'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$976'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$975'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$974'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$973'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$339_DATA[7:0]$968
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$961'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$960'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$959'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$958'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$957'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$956'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$955'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$954'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$953'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$952'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$951'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$950'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$949'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$948'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:75$947'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:74$946'.
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+     1/1: $1$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$338_DATA[7:0]$941
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:83$932'.
+     1/1: $1$mem2reg_rd$\result_mem$rtl/systolic_array.sv:83$337_DATA[31:0]$934
+Creating decoders for process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+     1/192: $4$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_ADDR[5:0]$482
+     2/192: $4$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_DATA[7:0]$483
+     3/192: $3\i[31:0]
+     4/192: $3$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_DATA[7:0]$479
+     5/192: $3$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_ADDR[5:0]$478
+     6/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_ADDR[5:0]$470
+     7/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_DATA[31:0]$471
+     8/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_ADDR[5:0]$461
+     9/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_DATA[31:0]$462
+    10/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_ADDR[5:0]$452
+    11/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_DATA[31:0]$453
+    12/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_ADDR[5:0]$443
+    13/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_DATA[31:0]$444
+    14/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_ADDR[5:0]$434
+    15/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_DATA[31:0]$435
+    16/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_ADDR[5:0]$425
+    17/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_DATA[31:0]$426
+    18/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_ADDR[5:0]$416
+    19/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_DATA[31:0]$417
+    20/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_ADDR[5:0]$407
+    21/192: $3$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_DATA[31:0]$408
+    22/192: $2\j[31:0]
+    23/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_DATA[31:0]$401
+    24/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_ADDR[5:0]$400
+    25/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_DATA[31:0]$399
+    26/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_ADDR[5:0]$398
+    27/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_DATA[31:0]$397
+    28/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_ADDR[5:0]$396
+    29/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_DATA[31:0]$395
+    30/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_ADDR[5:0]$394
+    31/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_DATA[31:0]$393
+    32/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_ADDR[5:0]$392
+    33/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_DATA[31:0]$391
+    34/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_ADDR[5:0]$390
+    35/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_DATA[31:0]$389
+    36/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_ADDR[5:0]$388
+    37/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_DATA[31:0]$387
+    38/192: $2$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_ADDR[5:0]$386
+    39/192: $2$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_DATA[7:0]$403
+    40/192: $2$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_ADDR[5:0]$402
+    41/192: $2\i[31:0]
+    42/192: $1$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_DATA[7:0]$385
+    43/192: $1$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_ADDR[5:0]$384
+    44/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_DATA[31:0]$383
+    45/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_ADDR[5:0]$382
+    46/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_DATA[31:0]$381
+    47/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_ADDR[5:0]$380
+    48/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_DATA[31:0]$379
+    49/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_ADDR[5:0]$378
+    50/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_DATA[31:0]$377
+    51/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_ADDR[5:0]$376
+    52/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_DATA[31:0]$375
+    53/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_ADDR[5:0]$374
+    54/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_DATA[31:0]$373
+    55/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_ADDR[5:0]$372
+    56/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_DATA[31:0]$371
+    57/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_ADDR[5:0]$370
+    58/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_DATA[31:0]$369
+    59/192: $1$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_ADDR[5:0]$368
+    60/192: $1\j[31:0]
+    61/192: $1\i[31:0]
+    62/192: $0\done[0:0]
+    63/192: $0\result_mem[63][31:0]
+    64/192: $0\result_mem[62][31:0]
+    65/192: $0\result_mem[61][31:0]
+    66/192: $0\result_mem[60][31:0]
+    67/192: $0\result_mem[59][31:0]
+    68/192: $0\result_mem[58][31:0]
+    69/192: $0\result_mem[57][31:0]
+    70/192: $0\result_mem[56][31:0]
+    71/192: $0\result_mem[55][31:0]
+    72/192: $0\result_mem[54][31:0]
+    73/192: $0\result_mem[53][31:0]
+    74/192: $0\result_mem[52][31:0]
+    75/192: $0\result_mem[51][31:0]
+    76/192: $0\result_mem[50][31:0]
+    77/192: $0\result_mem[49][31:0]
+    78/192: $0\result_mem[48][31:0]
+    79/192: $0\result_mem[47][31:0]
+    80/192: $0\result_mem[46][31:0]
+    81/192: $0\result_mem[45][31:0]
+    82/192: $0\result_mem[44][31:0]
+    83/192: $0\result_mem[43][31:0]
+    84/192: $0\result_mem[42][31:0]
+    85/192: $0\result_mem[41][31:0]
+    86/192: $0\result_mem[40][31:0]
+    87/192: $0\result_mem[39][31:0]
+    88/192: $0\result_mem[38][31:0]
+    89/192: $0\result_mem[37][31:0]
+    90/192: $0\result_mem[36][31:0]
+    91/192: $0\result_mem[35][31:0]
+    92/192: $0\result_mem[34][31:0]
+    93/192: $0\result_mem[33][31:0]
+    94/192: $0\result_mem[32][31:0]
+    95/192: $0\result_mem[31][31:0]
+    96/192: $0\result_mem[30][31:0]
+    97/192: $0\result_mem[29][31:0]
+    98/192: $0\result_mem[28][31:0]
+    99/192: $0\result_mem[27][31:0]
+   100/192: $0\result_mem[26][31:0]
+   101/192: $0\result_mem[25][31:0]
+   102/192: $0\result_mem[24][31:0]
+   103/192: $0\result_mem[23][31:0]
+   104/192: $0\result_mem[22][31:0]
+   105/192: $0\result_mem[21][31:0]
+   106/192: $0\result_mem[20][31:0]
+   107/192: $0\result_mem[19][31:0]
+   108/192: $0\result_mem[18][31:0]
+   109/192: $0\result_mem[17][31:0]
+   110/192: $0\result_mem[16][31:0]
+   111/192: $0\result_mem[15][31:0]
+   112/192: $0\result_mem[14][31:0]
+   113/192: $0\result_mem[13][31:0]
+   114/192: $0\result_mem[12][31:0]
+   115/192: $0\result_mem[11][31:0]
+   116/192: $0\result_mem[10][31:0]
+   117/192: $0\result_mem[9][31:0]
+   118/192: $0\result_mem[8][31:0]
+   119/192: $0\result_mem[7][31:0]
+   120/192: $0\result_mem[6][31:0]
+   121/192: $0\result_mem[5][31:0]
+   122/192: $0\result_mem[4][31:0]
+   123/192: $0\result_mem[3][31:0]
+   124/192: $0\result_mem[2][31:0]
+   125/192: $0\result_mem[1][31:0]
+   126/192: $0\result_mem[0][31:0]
+   127/192: $0\a_mem[63][7:0]
+   128/192: $0\a_mem[62][7:0]
+   129/192: $0\a_mem[61][7:0]
+   130/192: $0\a_mem[60][7:0]
+   131/192: $0\a_mem[59][7:0]
+   132/192: $0\a_mem[58][7:0]
+   133/192: $0\a_mem[57][7:0]
+   134/192: $0\a_mem[56][7:0]
+   135/192: $0\a_mem[55][7:0]
+   136/192: $0\a_mem[54][7:0]
+   137/192: $0\a_mem[53][7:0]
+   138/192: $0\a_mem[52][7:0]
+   139/192: $0\a_mem[51][7:0]
+   140/192: $0\a_mem[50][7:0]
+   141/192: $0\a_mem[49][7:0]
+   142/192: $0\a_mem[48][7:0]
+   143/192: $0\a_mem[47][7:0]
+   144/192: $0\a_mem[46][7:0]
+   145/192: $0\a_mem[45][7:0]
+   146/192: $0\a_mem[44][7:0]
+   147/192: $0\a_mem[43][7:0]
+   148/192: $0\a_mem[42][7:0]
+   149/192: $0\a_mem[41][7:0]
+   150/192: $0\a_mem[40][7:0]
+   151/192: $0\a_mem[39][7:0]
+   152/192: $0\a_mem[38][7:0]
+   153/192: $0\a_mem[37][7:0]
+   154/192: $0\a_mem[36][7:0]
+   155/192: $0\a_mem[35][7:0]
+   156/192: $0\a_mem[34][7:0]
+   157/192: $0\a_mem[33][7:0]
+   158/192: $0\a_mem[32][7:0]
+   159/192: $0\a_mem[31][7:0]
+   160/192: $0\a_mem[30][7:0]
+   161/192: $0\a_mem[29][7:0]
+   162/192: $0\a_mem[28][7:0]
+   163/192: $0\a_mem[27][7:0]
+   164/192: $0\a_mem[26][7:0]
+   165/192: $0\a_mem[25][7:0]
+   166/192: $0\a_mem[24][7:0]
+   167/192: $0\a_mem[23][7:0]
+   168/192: $0\a_mem[22][7:0]
+   169/192: $0\a_mem[21][7:0]
+   170/192: $0\a_mem[20][7:0]
+   171/192: $0\a_mem[19][7:0]
+   172/192: $0\a_mem[18][7:0]
+   173/192: $0\a_mem[17][7:0]
+   174/192: $0\a_mem[16][7:0]
+   175/192: $0\a_mem[15][7:0]
+   176/192: $0\a_mem[14][7:0]
+   177/192: $0\a_mem[13][7:0]
+   178/192: $0\a_mem[12][7:0]
+   179/192: $0\a_mem[11][7:0]
+   180/192: $0\a_mem[10][7:0]
+   181/192: $0\a_mem[9][7:0]
+   182/192: $0\a_mem[8][7:0]
+   183/192: $0\a_mem[7][7:0]
+   184/192: $0\a_mem[6][7:0]
+   185/192: $0\a_mem[5][7:0]
+   186/192: $0\a_mem[4][7:0]
+   187/192: $0\a_mem[3][7:0]
+   188/192: $0\a_mem[2][7:0]
+   189/192: $0\a_mem[1][7:0]
+   190/192: $0\a_mem[0][7:0]
+   191/192: $0\step[5:0]
+   192/192: $0\busy[0:0]
+Creating decoders for process `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+     1/3: $0\weight[7:0]
+     2/3: $0\psum_out[31:0]
+     3/3: $0\a_out[7:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\systolic_array.\psum_bus[7]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1158'.
+No latch inferred for signal `\systolic_array.\psum_bus[6]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1157'.
+No latch inferred for signal `\systolic_array.\psum_bus[5]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1156'.
+No latch inferred for signal `\systolic_array.\psum_bus[4]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1155'.
+No latch inferred for signal `\systolic_array.\psum_bus[3]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1154'.
+No latch inferred for signal `\systolic_array.\psum_bus[2]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1153'.
+No latch inferred for signal `\systolic_array.\psum_bus[1]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1152'.
+No latch inferred for signal `\systolic_array.\psum_bus[0]' from process `\systolic_array.$proc$rtl/systolic_array.sv:80$1151'.
+No latch inferred for signal `\systolic_array.\psum_bus[71]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1150'.
+No latch inferred for signal `\systolic_array.\a_bus[71]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1149'.
+No latch inferred for signal `\systolic_array.\psum_bus[70]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1148'.
+No latch inferred for signal `\systolic_array.\a_bus[70]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1147'.
+No latch inferred for signal `\systolic_array.\psum_bus[69]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1146'.
+No latch inferred for signal `\systolic_array.\a_bus[69]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1145'.
+No latch inferred for signal `\systolic_array.\psum_bus[68]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1144'.
+No latch inferred for signal `\systolic_array.\a_bus[68]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1143'.
+No latch inferred for signal `\systolic_array.\psum_bus[67]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1142'.
+No latch inferred for signal `\systolic_array.\a_bus[67]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1141'.
+No latch inferred for signal `\systolic_array.\psum_bus[66]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1140'.
+No latch inferred for signal `\systolic_array.\a_bus[66]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1139'.
+No latch inferred for signal `\systolic_array.\psum_bus[65]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1138'.
+No latch inferred for signal `\systolic_array.\a_bus[65]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1137'.
+No latch inferred for signal `\systolic_array.\psum_bus[64]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1136'.
+No latch inferred for signal `\systolic_array.\a_bus[64]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1135'.
+No latch inferred for signal `\systolic_array.\a_bus[63]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$345_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$345_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+No latch inferred for signal `\systolic_array.\psum_bus[63]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1123'.
+No latch inferred for signal `\systolic_array.\a_bus[62]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1122'.
+No latch inferred for signal `\systolic_array.\psum_bus[62]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1121'.
+No latch inferred for signal `\systolic_array.\a_bus[61]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1120'.
+No latch inferred for signal `\systolic_array.\psum_bus[61]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1119'.
+No latch inferred for signal `\systolic_array.\a_bus[60]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1118'.
+No latch inferred for signal `\systolic_array.\psum_bus[60]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1117'.
+No latch inferred for signal `\systolic_array.\a_bus[59]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1116'.
+No latch inferred for signal `\systolic_array.\psum_bus[59]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1115'.
+No latch inferred for signal `\systolic_array.\a_bus[58]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1114'.
+No latch inferred for signal `\systolic_array.\psum_bus[58]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1113'.
+No latch inferred for signal `\systolic_array.\a_bus[57]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1112'.
+No latch inferred for signal `\systolic_array.\psum_bus[57]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1111'.
+No latch inferred for signal `\systolic_array.\a_bus[56]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1110'.
+No latch inferred for signal `\systolic_array.\psum_bus[56]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1109'.
+No latch inferred for signal `\systolic_array.\a_bus[55]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1108'.
+No latch inferred for signal `\systolic_array.\a_bus[54]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$344_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$344_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+No latch inferred for signal `\systolic_array.\psum_bus[55]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1096'.
+No latch inferred for signal `\systolic_array.\a_bus[53]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1095'.
+No latch inferred for signal `\systolic_array.\psum_bus[54]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1094'.
+No latch inferred for signal `\systolic_array.\a_bus[52]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1093'.
+No latch inferred for signal `\systolic_array.\psum_bus[53]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1092'.
+No latch inferred for signal `\systolic_array.\a_bus[51]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1091'.
+No latch inferred for signal `\systolic_array.\psum_bus[52]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1090'.
+No latch inferred for signal `\systolic_array.\a_bus[50]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1089'.
+No latch inferred for signal `\systolic_array.\psum_bus[51]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1088'.
+No latch inferred for signal `\systolic_array.\a_bus[49]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1087'.
+No latch inferred for signal `\systolic_array.\psum_bus[50]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1086'.
+No latch inferred for signal `\systolic_array.\a_bus[48]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1085'.
+No latch inferred for signal `\systolic_array.\psum_bus[49]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1084'.
+No latch inferred for signal `\systolic_array.\a_bus[47]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1083'.
+No latch inferred for signal `\systolic_array.\psum_bus[48]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1082'.
+No latch inferred for signal `\systolic_array.\a_bus[46]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1081'.
+No latch inferred for signal `\systolic_array.\a_bus[45]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$343_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$343_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+No latch inferred for signal `\systolic_array.\psum_bus[47]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1069'.
+No latch inferred for signal `\systolic_array.\a_bus[44]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1068'.
+No latch inferred for signal `\systolic_array.\psum_bus[46]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1067'.
+No latch inferred for signal `\systolic_array.\a_bus[43]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1066'.
+No latch inferred for signal `\systolic_array.\psum_bus[45]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1065'.
+No latch inferred for signal `\systolic_array.\a_bus[42]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1064'.
+No latch inferred for signal `\systolic_array.\psum_bus[44]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1063'.
+No latch inferred for signal `\systolic_array.\a_bus[41]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1062'.
+No latch inferred for signal `\systolic_array.\psum_bus[43]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1061'.
+No latch inferred for signal `\systolic_array.\a_bus[40]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1060'.
+No latch inferred for signal `\systolic_array.\psum_bus[42]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1059'.
+No latch inferred for signal `\systolic_array.\a_bus[39]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1058'.
+No latch inferred for signal `\systolic_array.\psum_bus[41]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1057'.
+No latch inferred for signal `\systolic_array.\a_bus[38]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1056'.
+No latch inferred for signal `\systolic_array.\psum_bus[40]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1055'.
+No latch inferred for signal `\systolic_array.\a_bus[37]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1054'.
+No latch inferred for signal `\systolic_array.\a_bus[36]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$342_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$342_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+No latch inferred for signal `\systolic_array.\psum_bus[39]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1042'.
+No latch inferred for signal `\systolic_array.\a_bus[35]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1041'.
+No latch inferred for signal `\systolic_array.\psum_bus[38]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1040'.
+No latch inferred for signal `\systolic_array.\a_bus[34]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1039'.
+No latch inferred for signal `\systolic_array.\psum_bus[37]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1038'.
+No latch inferred for signal `\systolic_array.\a_bus[33]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1037'.
+No latch inferred for signal `\systolic_array.\psum_bus[36]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1036'.
+No latch inferred for signal `\systolic_array.\a_bus[32]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1035'.
+No latch inferred for signal `\systolic_array.\psum_bus[35]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1034'.
+No latch inferred for signal `\systolic_array.\a_bus[31]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1033'.
+No latch inferred for signal `\systolic_array.\psum_bus[34]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1032'.
+No latch inferred for signal `\systolic_array.\a_bus[30]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1031'.
+No latch inferred for signal `\systolic_array.\psum_bus[33]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1030'.
+No latch inferred for signal `\systolic_array.\a_bus[29]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1029'.
+No latch inferred for signal `\systolic_array.\psum_bus[32]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1028'.
+No latch inferred for signal `\systolic_array.\a_bus[28]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1027'.
+No latch inferred for signal `\systolic_array.\a_bus[27]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$341_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$341_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+No latch inferred for signal `\systolic_array.\psum_bus[31]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1015'.
+No latch inferred for signal `\systolic_array.\a_bus[26]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1014'.
+No latch inferred for signal `\systolic_array.\psum_bus[30]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1013'.
+No latch inferred for signal `\systolic_array.\a_bus[25]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1012'.
+No latch inferred for signal `\systolic_array.\psum_bus[29]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1011'.
+No latch inferred for signal `\systolic_array.\a_bus[24]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1010'.
+No latch inferred for signal `\systolic_array.\psum_bus[28]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1009'.
+No latch inferred for signal `\systolic_array.\a_bus[23]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1008'.
+No latch inferred for signal `\systolic_array.\psum_bus[27]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1007'.
+No latch inferred for signal `\systolic_array.\a_bus[22]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1006'.
+No latch inferred for signal `\systolic_array.\psum_bus[26]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1005'.
+No latch inferred for signal `\systolic_array.\a_bus[21]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1004'.
+No latch inferred for signal `\systolic_array.\psum_bus[25]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1003'.
+No latch inferred for signal `\systolic_array.\a_bus[20]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1002'.
+No latch inferred for signal `\systolic_array.\psum_bus[24]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$1001'.
+No latch inferred for signal `\systolic_array.\a_bus[19]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$1000'.
+No latch inferred for signal `\systolic_array.\a_bus[18]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$340_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$340_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+No latch inferred for signal `\systolic_array.\psum_bus[23]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$988'.
+No latch inferred for signal `\systolic_array.\a_bus[17]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$987'.
+No latch inferred for signal `\systolic_array.\psum_bus[22]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$986'.
+No latch inferred for signal `\systolic_array.\a_bus[16]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$985'.
+No latch inferred for signal `\systolic_array.\psum_bus[21]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$984'.
+No latch inferred for signal `\systolic_array.\a_bus[15]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$983'.
+No latch inferred for signal `\systolic_array.\psum_bus[20]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$982'.
+No latch inferred for signal `\systolic_array.\a_bus[14]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$981'.
+No latch inferred for signal `\systolic_array.\psum_bus[19]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$980'.
+No latch inferred for signal `\systolic_array.\a_bus[13]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$979'.
+No latch inferred for signal `\systolic_array.\psum_bus[18]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$978'.
+No latch inferred for signal `\systolic_array.\a_bus[12]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$977'.
+No latch inferred for signal `\systolic_array.\psum_bus[17]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$976'.
+No latch inferred for signal `\systolic_array.\a_bus[11]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$975'.
+No latch inferred for signal `\systolic_array.\psum_bus[16]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$974'.
+No latch inferred for signal `\systolic_array.\a_bus[10]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$973'.
+No latch inferred for signal `\systolic_array.\a_bus[9]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$339_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$339_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+No latch inferred for signal `\systolic_array.\psum_bus[15]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$961'.
+No latch inferred for signal `\systolic_array.\a_bus[8]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$960'.
+No latch inferred for signal `\systolic_array.\psum_bus[14]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$959'.
+No latch inferred for signal `\systolic_array.\a_bus[7]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$958'.
+No latch inferred for signal `\systolic_array.\psum_bus[13]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$957'.
+No latch inferred for signal `\systolic_array.\a_bus[6]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$956'.
+No latch inferred for signal `\systolic_array.\psum_bus[12]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$955'.
+No latch inferred for signal `\systolic_array.\a_bus[5]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$954'.
+No latch inferred for signal `\systolic_array.\psum_bus[11]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$953'.
+No latch inferred for signal `\systolic_array.\a_bus[4]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$952'.
+No latch inferred for signal `\systolic_array.\psum_bus[10]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$951'.
+No latch inferred for signal `\systolic_array.\a_bus[3]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$950'.
+No latch inferred for signal `\systolic_array.\psum_bus[9]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$949'.
+No latch inferred for signal `\systolic_array.\a_bus[2]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$948'.
+No latch inferred for signal `\systolic_array.\psum_bus[8]' from process `\systolic_array.$proc$rtl/systolic_array.sv:75$947'.
+No latch inferred for signal `\systolic_array.\a_bus[1]' from process `\systolic_array.$proc$rtl/systolic_array.sv:74$946'.
+No latch inferred for signal `\systolic_array.\a_bus[0]' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$338_ADDR' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\a_mem$rtl/systolic_array.sv:68$338_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+No latch inferred for signal `\systolic_array.$mem2reg_rd$\result_mem$rtl/systolic_array.sv:83$337_DATA' from process `\systolic_array.$proc$rtl/systolic_array.sv:83$932'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\systolic_array.\i' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23768' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\busy' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23773' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\done' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23778' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\step' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23783' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\j' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $dff cell `$procdff$23790' with positive edge clock.
+Creating register for signal `\systolic_array.\a_mem[0]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23795' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[1]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23800' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[2]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23805' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[3]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23810' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[4]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23815' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[5]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23820' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[6]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23825' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[7]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23830' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[8]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23835' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[9]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23840' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[10]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23845' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[11]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23850' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[12]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23855' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[13]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23860' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[14]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23865' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[15]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23870' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[16]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23875' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[17]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23880' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[18]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23885' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[19]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23890' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[20]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23895' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[21]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23900' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[22]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23905' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[23]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23910' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[24]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23915' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[25]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23920' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[26]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23925' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[27]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23930' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[28]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23935' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[29]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23940' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[30]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23945' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[31]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23950' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[32]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23955' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[33]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23960' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[34]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23965' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[35]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23970' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[36]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23975' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[37]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23980' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[38]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23985' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[39]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23990' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[40]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$23995' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[41]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24000' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[42]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24005' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[43]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24010' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[44]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24015' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[45]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24020' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[46]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24025' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[47]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24030' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[48]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24035' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[49]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24040' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[50]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24045' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[51]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24050' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[52]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24055' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[53]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24060' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[54]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24065' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[55]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24070' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[56]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24075' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[57]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24080' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[58]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24085' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[59]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24090' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[60]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24095' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[61]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24100' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[62]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24105' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\a_mem[63]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24110' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[0]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24115' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[1]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24120' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[2]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24125' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[3]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24130' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[4]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24135' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[5]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24140' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[6]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24145' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[7]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24150' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[8]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24155' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[9]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24160' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[10]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24165' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[11]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24170' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[12]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24175' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[13]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24180' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[14]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24185' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[15]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24190' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[16]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24195' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[17]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24200' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[18]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24205' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[19]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24210' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[20]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24215' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[21]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24220' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[22]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24225' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[23]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24230' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[24]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24235' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[25]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24240' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[26]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24245' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[27]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24250' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[28]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24255' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[29]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24260' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[30]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24265' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[31]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24270' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[32]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24275' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[33]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24280' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[34]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24285' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[35]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24290' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[36]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24295' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[37]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24300' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[38]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24305' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[39]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24310' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[40]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24315' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[41]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24320' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[42]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24325' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[43]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24330' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[44]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24335' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[45]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24340' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[46]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24345' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[47]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24350' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[48]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24355' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[49]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24360' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[50]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24365' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[51]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24370' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[52]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24375' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[53]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24380' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[54]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24385' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[55]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24390' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[56]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24395' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[57]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24400' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[58]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24405' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[59]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24410' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[60]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24415' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[61]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24420' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[62]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24425' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.\result_mem[63]' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24430' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24435' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$328_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24440' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24445' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$329_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24450' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24455' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$330_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24460' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24465' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$331_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24470' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24475' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$332_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24480' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24485' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$333_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24490' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24495' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$334_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24500' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24505' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\result_mem$rtl/systolic_array.sv:46$335_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24510' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_ADDR' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24515' with positive edge clock and positive level reset.
+Creating register for signal `\systolic_array.$mem2reg_wr$\a_mem$rtl/systolic_array.sv:60$336_DATA' using process `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+  created $adff cell `$procdff$24520' with positive edge clock and positive level reset.
+Creating register for signal `\mac_pe.\a_out' using process `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+  created $adff cell `$procdff$24525' with positive edge clock and positive level reset.
+Creating register for signal `\mac_pe.\psum_out' using process `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+  created $adff cell `$procdff$24530' with positive edge clock and positive level reset.
+Creating register for signal `\mac_pe.\weight' using process `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+  created $adff cell `$procdff$24535' with positive edge clock and positive level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1158'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1157'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1156'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1155'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1154'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1153'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1152'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:80$1151'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1150'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1149'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1148'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1147'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1146'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1145'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1144'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1143'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1142'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1141'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1140'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1139'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1138'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1137'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1136'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1135'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$1124'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1123'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1122'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1121'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1120'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1119'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1118'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1117'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1116'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1115'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1114'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1113'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1112'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1111'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1110'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1109'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1108'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$1097'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1096'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1095'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1094'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1093'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1092'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1091'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1090'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1089'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1088'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1087'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1086'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1085'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1084'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1083'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1082'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1081'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$1070'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1069'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1068'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1067'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1066'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1065'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1064'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1063'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1062'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1061'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1060'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1059'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1058'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1057'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1056'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1055'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1054'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$1043'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1042'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1041'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1040'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1039'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1038'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1037'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1036'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1035'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1034'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1033'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1032'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1031'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1030'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1029'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1028'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1027'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$1016'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1015'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1014'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1013'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1012'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1011'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1010'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1009'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1008'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1007'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1006'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1005'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1004'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1003'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1002'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$1001'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$1000'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$989'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$988'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$987'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$986'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$985'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$984'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$983'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$982'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$981'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$980'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$979'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$978'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$977'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$976'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$975'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$974'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$973'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$962'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$961'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$960'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$959'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$958'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$957'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$956'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$955'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$954'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$953'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$952'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$951'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$950'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$949'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$948'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:75$947'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:74$946'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:67$935'.
+Found and cleaned up 1 empty switch in `\systolic_array.$proc$rtl/systolic_array.sv:83$932'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:83$932'.
+Found and cleaned up 21 empty switches in `\systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+Removing empty process `systolic_array.$proc$rtl/systolic_array.sv:32$348'.
+Found and cleaned up 3 empty switches in `\mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+Removing empty process `mac_pe.$proc$rtl/mac_pe.sv:22$2'.
+Cleaned up 33 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_array.
+<suppressed ~321 debug messages>
+Optimizing module mac_pe.
+<suppressed ~6 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_array.
+<suppressed ~36 debug messages>
+Optimizing module mac_pe.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_array'.
+Computing hashes of 3559 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Computing hashes of 3133 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Computing hashes of 3070 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Computing hashes of 3007 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+<suppressed ~1656 debug messages>
+Finding identical cells in module `\mac_pe'.
+Computing hashes of 14 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+Computing hashes of 12 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+<suppressed ~6 debug messages>
+Removed a total of 554 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$23748: \busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$23744: \busy -> 1'0
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$1931.
+    dead port 2/2 on $mux $procmux$1931.
+    dead port 1/2 on $mux $procmux$1928.
+    dead port 2/2 on $mux $procmux$1928.
+    dead port 1/2 on $mux $procmux$1925.
+    dead port 2/2 on $mux $procmux$1925.
+    dead port 1/2 on $mux $procmux$1922.
+    dead port 2/2 on $mux $procmux$1922.
+    dead port 1/2 on $mux $procmux$1919.
+    dead port 2/2 on $mux $procmux$1919.
+    dead port 1/2 on $mux $procmux$1916.
+    dead port 2/2 on $mux $procmux$1916.
+    dead port 1/2 on $mux $procmux$1913.
+    dead port 2/2 on $mux $procmux$1913.
+    dead port 1/2 on $mux $procmux$1910.
+    dead port 2/2 on $mux $procmux$1910.
+    dead port 1/2 on $mux $procmux$1907.
+    dead port 2/2 on $mux $procmux$1907.
+    dead port 1/2 on $mux $procmux$1904.
+    dead port 2/2 on $mux $procmux$1904.
+    dead port 1/2 on $mux $procmux$1901.
+    dead port 2/2 on $mux $procmux$1901.
+    dead port 1/2 on $mux $procmux$1898.
+    dead port 2/2 on $mux $procmux$1898.
+    dead port 1/2 on $mux $procmux$1895.
+    dead port 2/2 on $mux $procmux$1895.
+    dead port 1/2 on $mux $procmux$1892.
+    dead port 2/2 on $mux $procmux$1892.
+    dead port 1/2 on $mux $procmux$1889.
+    dead port 2/2 on $mux $procmux$1889.
+    dead port 1/2 on $mux $procmux$1886.
+    dead port 2/2 on $mux $procmux$1886.
+    dead port 1/2 on $mux $procmux$1883.
+    dead port 2/2 on $mux $procmux$1883.
+    dead port 1/2 on $mux $procmux$1880.
+    dead port 2/2 on $mux $procmux$1880.
+    dead port 1/2 on $mux $procmux$1874.
+    dead port 2/2 on $mux $procmux$1874.
+    dead port 1/2 on $mux $procmux$1872.
+    dead port 2/2 on $mux $procmux$1872.
+    dead port 1/2 on $mux $procmux$1868.
+    dead port 2/2 on $mux $procmux$1868.
+    dead port 1/2 on $mux $procmux$1866.
+    dead port 2/2 on $mux $procmux$1866.
+    dead port 1/2 on $mux $procmux$1862.
+    dead port 2/2 on $mux $procmux$1862.
+    dead port 1/2 on $mux $procmux$1860.
+    dead port 2/2 on $mux $procmux$1860.
+    dead port 1/2 on $mux $procmux$1856.
+    dead port 2/2 on $mux $procmux$1856.
+    dead port 1/2 on $mux $procmux$1854.
+    dead port 2/2 on $mux $procmux$1854.
+    dead port 1/2 on $mux $procmux$1850.
+    dead port 2/2 on $mux $procmux$1850.
+    dead port 1/2 on $mux $procmux$1848.
+    dead port 2/2 on $mux $procmux$1848.
+    dead port 1/2 on $mux $procmux$1844.
+    dead port 2/2 on $mux $procmux$1844.
+    dead port 1/2 on $mux $procmux$1842.
+    dead port 2/2 on $mux $procmux$1842.
+    dead port 1/2 on $mux $procmux$1838.
+    dead port 2/2 on $mux $procmux$1838.
+    dead port 1/2 on $mux $procmux$1836.
+    dead port 2/2 on $mux $procmux$1836.
+    dead port 1/2 on $mux $procmux$1832.
+    dead port 2/2 on $mux $procmux$1832.
+    dead port 1/2 on $mux $procmux$1830.
+    dead port 2/2 on $mux $procmux$1830.
+    dead port 1/2 on $mux $procmux$1826.
+    dead port 2/2 on $mux $procmux$1826.
+    dead port 1/2 on $mux $procmux$1824.
+    dead port 2/2 on $mux $procmux$1824.
+    dead port 1/2 on $mux $procmux$1820.
+    dead port 2/2 on $mux $procmux$1820.
+    dead port 1/2 on $mux $procmux$1818.
+    dead port 2/2 on $mux $procmux$1818.
+    dead port 1/2 on $mux $procmux$1814.
+    dead port 2/2 on $mux $procmux$1814.
+    dead port 1/2 on $mux $procmux$1812.
+    dead port 2/2 on $mux $procmux$1812.
+    dead port 1/2 on $mux $procmux$1808.
+    dead port 2/2 on $mux $procmux$1808.
+    dead port 1/2 on $mux $procmux$1806.
+    dead port 2/2 on $mux $procmux$1806.
+    dead port 1/2 on $mux $procmux$1802.
+    dead port 2/2 on $mux $procmux$1802.
+    dead port 1/2 on $mux $procmux$1800.
+    dead port 2/2 on $mux $procmux$1800.
+    dead port 1/2 on $mux $procmux$1796.
+    dead port 2/2 on $mux $procmux$1796.
+    dead port 1/2 on $mux $procmux$1794.
+    dead port 2/2 on $mux $procmux$1794.
+    dead port 1/2 on $mux $procmux$1790.
+    dead port 2/2 on $mux $procmux$1790.
+    dead port 1/2 on $mux $procmux$1788.
+    dead port 2/2 on $mux $procmux$1788.
+    dead port 1/2 on $mux $procmux$1784.
+    dead port 2/2 on $mux $procmux$1784.
+    dead port 1/2 on $mux $procmux$1782.
+    dead port 2/2 on $mux $procmux$1782.
+    dead port 1/2 on $mux $procmux$1778.
+    dead port 2/2 on $mux $procmux$1778.
+    dead port 1/2 on $mux $procmux$1775.
+    dead port 2/2 on $mux $procmux$1775.
+    dead port 1/2 on $mux $procmux$1772.
+    dead port 2/2 on $mux $procmux$1772.
+    dead port 1/2 on $mux $procmux$1769.
+    dead port 2/2 on $mux $procmux$1769.
+    dead port 1/2 on $mux $procmux$1766.
+    dead port 1/2 on $mux $procmux$1760.
+    dead port 2/2 on $mux $procmux$1760.
+    dead port 1/2 on $mux $procmux$1757.
+    dead port 2/2 on $mux $procmux$1757.
+    dead port 1/2 on $mux $procmux$1754.
+    dead port 2/2 on $mux $procmux$1754.
+    dead port 1/2 on $mux $procmux$1751.
+    dead port 2/2 on $mux $procmux$1751.
+    dead port 1/2 on $mux $procmux$1748.
+    dead port 2/2 on $mux $procmux$1748.
+    dead port 1/2 on $mux $procmux$1745.
+    dead port 2/2 on $mux $procmux$1745.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 121 multiplexer ports.
+<suppressed ~7732 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \systolic_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_array'.
+Computing hashes of 2946 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Finding identical cells in module `\mac_pe'.
+Computing hashes of 12 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$24265 ($adff) from module systolic_array (D = $procmux$7992_Y, Q = \result_mem[30]).
+Adding EN signal on $procdff$24260 ($adff) from module systolic_array (D = $procmux$8310_Y, Q = \result_mem[29]).
+Adding EN signal on $procdff$23985 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[38]).
+Adding EN signal on $procdff$24270 ($adff) from module systolic_array (D = $procmux$7682_Y, Q = \result_mem[31]).
+Adding EN signal on $procdff$23768 ($adff) from module systolic_array (D = $3\i[31:0], Q = \i).
+Adding EN signal on $procdff$24105 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[62]).
+Adding EN signal on $procdff$24240 ($adff) from module systolic_array (D = $procmux$9662_Y, Q = \result_mem[25]).
+Adding EN signal on $procdff$23990 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[39]).
+Adding EN signal on $procdff$24405 ($adff) from module systolic_array (D = $procmux$2336_Y, Q = \result_mem[58]).
+Adding EN signal on $procdff$24345 ($adff) from module systolic_array (D = $procmux$3992_Y, Q = \result_mem[46]).
+Adding EN signal on $procdff$24275 ($adff) from module systolic_array (D = $procmux$7380_Y, Q = \result_mem[32]).
+Adding EN signal on $procdff$23783 ($adff) from module systolic_array (D = $procmux$23741_Y, Q = \step).
+Adding EN signal on $procdff$23995 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[40]).
+Adding EN signal on $procdff$24110 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[63]).
+Adding EN signal on $procdff$23790 ($dff) from module systolic_array (D = 8, Q = \j).
+Adding EN signal on $procdff$24175 ($adff) from module systolic_array (D = $procmux$14940_Y, Q = \result_mem[12]).
+Adding EN signal on $procdff$24000 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[41]).
+Adding EN signal on $procdff$23795 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[0]).
+Adding EN signal on $procdff$24385 ($adff) from module systolic_array (D = $procmux$2760_Y, Q = \result_mem[54]).
+Adding EN signal on $procdff$24280 ($adff) from module systolic_array (D = $procmux$7086_Y, Q = \result_mem[33]).
+Adding EN signal on $procdff$23800 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[1]).
+Adding EN signal on $procdff$24115 ($adff) from module systolic_array (D = $procmux$21012_Y, Q = \result_mem[0]).
+Adding EN signal on $procdff$24005 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[42]).
+Adding EN signal on $procdff$23805 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[2]).
+Adding EN signal on $procdff$24210 ($adff) from module systolic_array (D = $procmux$11930_Y, Q = \result_mem[19]).
+Adding EN signal on $procdff$24350 ($adff) from module systolic_array (D = $procmux$3810_Y, Q = \result_mem[47]).
+Adding EN signal on $procdff$23810 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[3]).
+Adding EN signal on $procdff$24010 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[43]).
+Adding EN signal on $procdff$24285 ($adff) from module systolic_array (D = $procmux$6800_Y, Q = \result_mem[34]).
+Adding EN signal on $procdff$23815 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[4]).
+Adding EN signal on $procdff$24120 ($adff) from module systolic_array (D = $procmux$20462_Y, Q = \result_mem[1]).
+Adding EN signal on $procdff$23820 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[5]).
+Adding EN signal on $procdff$24015 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[44]).
+Adding EN signal on $procdff$24180 ($adff) from module systolic_array (D = $procmux$14486_Y, Q = \result_mem[13]).
+Adding EN signal on $procdff$23825 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[6]).
+Adding EN signal on $procdff$24230 ($adff) from module systolic_array (D = $procmux$10386_Y, Q = \result_mem[23]).
+Adding EN signal on $procdff$24290 ($adff) from module systolic_array (D = $procmux$6522_Y, Q = \result_mem[35]).
+Adding EN signal on $procdff$23830 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[7]).
+Adding EN signal on $procdff$24020 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[45]).
+Adding EN signal on $procdff$24125 ($adff) from module systolic_array (D = $procmux$19920_Y, Q = \result_mem[2]).
+Adding EN signal on $procdff$23835 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[8]).
+Adding EN signal on $procdff$24355 ($adff) from module systolic_array (D = $procmux$3636_Y, Q = \result_mem[48]).
+Adding EN signal on $procdff$24025 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[46]).
+Adding EN signal on $procdff$23840 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[9]).
+Adding EN signal on $procdff$24215 ($adff) from module systolic_array (D = $procmux$11532_Y, Q = \result_mem[20]).
+Adding EN signal on $procdff$24295 ($adff) from module systolic_array (D = $procmux$6252_Y, Q = \result_mem[36]).
+Adding EN signal on $procdff$23845 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[10]).
+Adding EN signal on $procdff$24390 ($adff) from module systolic_array (D = $procmux$2642_Y, Q = \result_mem[55]).
+Adding EN signal on $procdff$24030 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[47]).
+Adding EN signal on $procdff$23850 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[11]).
+Adding EN signal on $procdff$24130 ($adff) from module systolic_array (D = $procmux$19386_Y, Q = \result_mem[3]).
+Adding EN signal on $procdff$24185 ($adff) from module systolic_array (D = $procmux$14040_Y, Q = \result_mem[14]).
+Adding EN signal on $procdff$23855 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[12]).
+Adding EN signal on $procdff$24035 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[48]).
+Adding EN signal on $procdff$24300 ($adff) from module systolic_array (D = $procmux$5990_Y, Q = \result_mem[37]).
+Adding EN signal on $procdff$23860 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[13]).
+Adding EN signal on $procdff$24360 ($adff) from module systolic_array (D = $procmux$3470_Y, Q = \result_mem[49]).
+Adding EN signal on $procdff$23865 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[14]).
+Adding EN signal on $procdff$24040 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[49]).
+Adding EN signal on $procdff$24135 ($adff) from module systolic_array (D = $procmux$18860_Y, Q = \result_mem[4]).
+Adding EN signal on $procdff$23870 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[15]).
+Adding EN signal on $procdff$24410 ($adff) from module systolic_array (D = $procmux$2250_Y, Q = \result_mem[59]).
+Adding EN signal on $procdff$24305 ($adff) from module systolic_array (D = $procmux$5736_Y, Q = \result_mem[38]).
+Adding EN signal on $procdff$23875 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[16]).
+Adding EN signal on $procdff$24045 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[50]).
+Adding EN signal on $procdff$24190 ($adff) from module systolic_array (D = $procmux$13602_Y, Q = \result_mem[15]).
+Adding EN signal on $procdff$23880 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[17]).
+Adding EN signal on $procdff$24140 ($adff) from module systolic_array (D = $procmux$18342_Y, Q = \result_mem[5]).
+Adding EN signal on $procdff$24050 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[51]).
+Adding EN signal on $procdff$23885 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[18]).
+Adding EN signal on $procdff$24420 ($adff) from module systolic_array (D = $procmux$2102_Y, Q = \result_mem[61]).
+Adding EN signal on $procdff$24310 ($adff) from module systolic_array (D = $procmux$5490_Y, Q = \result_mem[39]).
+Adding EN signal on $procdff$23890 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[19]).
+Adding EN signal on $procdff$24365 ($adff) from module systolic_array (D = $procmux$3312_Y, Q = \result_mem[50]).
+Adding EN signal on $procdff$24055 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[52]).
+Adding EN signal on $procdff$23895 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[20]).
+Adding EN signal on $procdff$24395 ($adff) from module systolic_array (D = $procmux$2532_Y, Q = \result_mem[56]).
+Adding EN signal on $procdff$24145 ($adff) from module systolic_array (D = $procmux$17832_Y, Q = \result_mem[6]).
+Adding EN signal on $procdff$23900 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[21]).
+Adding EN signal on $procdff$24060 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[53]).
+Adding EN signal on $procdff$24315 ($adff) from module systolic_array (D = $procmux$5252_Y, Q = \result_mem[40]).
+Adding EN signal on $procdff$23905 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[22]).
+Adding EN signal on $procdff$24220 ($adff) from module systolic_array (D = $procmux$11142_Y, Q = \result_mem[21]).
+Adding EN signal on $procdff$24195 ($adff) from module systolic_array (D = $procmux$13172_Y, Q = \result_mem[16]).
+Adding EN signal on $procdff$23910 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[23]).
+Adding EN signal on $procdff$24065 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[54]).
+Adding EN signal on $procdff$23915 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[24]).
+Adding EN signal on $procdff$24150 ($adff) from module systolic_array (D = $procmux$17330_Y, Q = \result_mem[7]).
+Adding EN signal on $procdff$24320 ($adff) from module systolic_array (D = $procmux$5022_Y, Q = \result_mem[41]).
+Adding EN signal on $procdff$23920 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[25]).
+Adding EN signal on $procdff$24370 ($adff) from module systolic_array (D = $procmux$3162_Y, Q = \result_mem[51]).
+Adding EN signal on $procdff$24070 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[55]).
+Adding EN signal on $procdff$23925 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[26]).
+Adding EN signal on $procdff$24425 ($adff) from module systolic_array (D = $procmux$2040_Y, Q = \result_mem[62]).
+Adding EN signal on $procdff$23930 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[27]).
+Adding EN signal on $procdff$24075 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[56]).
+Adding EN signal on $procdff$24325 ($adff) from module systolic_array (D = $procmux$4800_Y, Q = \result_mem[42]).
+Adding EN signal on $procdff$23935 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[28]).
+Adding EN signal on $procdff$24155 ($adff) from module systolic_array (D = $procmux$16836_Y, Q = \result_mem[8]).
+Adding EN signal on $procdff$24200 ($adff) from module systolic_array (D = $procmux$12750_Y, Q = \result_mem[17]).
+Adding EN signal on $procdff$23940 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[29]).
+Adding EN signal on $procdff$24080 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[57]).
+Adding EN signal on $procdff$24400 ($adff) from module systolic_array (D = $procmux$2430_Y, Q = \result_mem[57]).
+Adding EN signal on $procdff$23945 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[30]).
+Adding EN signal on $procdff$24375 ($adff) from module systolic_array (D = $procmux$3020_Y, Q = \result_mem[52]).
+Adding EN signal on $procdff$24330 ($adff) from module systolic_array (D = $procmux$4586_Y, Q = \result_mem[43]).
+Adding EN signal on $procdff$23950 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[31]).
+Adding EN signal on $procdff$24085 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[58]).
+Adding EN signal on $procdff$24160 ($adff) from module systolic_array (D = $procmux$16350_Y, Q = \result_mem[9]).
+Adding EN signal on $procdff$23955 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[32]).
+Adding EN signal on $procdff$24235 ($adff) from module systolic_array (D = $procmux$10020_Y, Q = \result_mem[24]).
+Adding EN signal on $procdff$24090 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[59]).
+Adding EN signal on $procdff$23960 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[33]).
+Adding EN signal on $procdff$24415 ($adff) from module systolic_array (D = $procmux$2172_Y, Q = \result_mem[60]).
+Adding EN signal on $procdff$24335 ($adff) from module systolic_array (D = $procmux$4380_Y, Q = \result_mem[44]).
+Adding EN signal on $procdff$23965 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[34]).
+Adding EN signal on $procdff$24165 ($adff) from module systolic_array (D = $procmux$15872_Y, Q = \result_mem[10]).
+Adding EN signal on $procdff$24095 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[60]).
+Adding EN signal on $procdff$23970 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[35]).
+Adding EN signal on $procdff$24205 ($adff) from module systolic_array (D = $procmux$12336_Y, Q = \result_mem[18]).
+Adding EN signal on $procdff$24380 ($adff) from module systolic_array (D = $procmux$2886_Y, Q = \result_mem[53]).
+Adding EN signal on $procdff$23975 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[36]).
+Adding EN signal on $procdff$24100 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[61]).
+Adding EN signal on $procdff$24255 ($adff) from module systolic_array (D = $procmux$8636_Y, Q = \result_mem[28]).
+Adding EN signal on $procdff$24340 ($adff) from module systolic_array (D = $procmux$4182_Y, Q = \result_mem[45]).
+Adding EN signal on $procdff$23980 ($adff) from module systolic_array (D = \load_data, Q = \a_mem[37]).
+Adding EN signal on $procdff$24250 ($adff) from module systolic_array (D = $procmux$8970_Y, Q = \result_mem[27]).
+Adding EN signal on $procdff$24430 ($adff) from module systolic_array (D = $procmux$1986_Y, Q = \result_mem[63]).
+Adding EN signal on $procdff$24225 ($adff) from module systolic_array (D = $procmux$10760_Y, Q = \result_mem[22]).
+Adding EN signal on $procdff$24245 ($adff) from module systolic_array (D = $procmux$9312_Y, Q = \result_mem[26]).
+Adding EN signal on $procdff$24170 ($adff) from module systolic_array (D = $procmux$15402_Y, Q = \result_mem[11]).
+Setting constant 1-bit at position 0 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 1 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 2 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 3 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 4 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 5 on $procdff$24485 ($adff) from module systolic_array.
+Setting constant 1-bit at position 0 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 1 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 2 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 3 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 4 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 5 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 6 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 7 on $procdff$24520 ($adff) from module systolic_array.
+Setting constant 1-bit at position 0 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 1 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 2 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 3 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 4 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 5 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 6 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 7 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 8 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 9 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 10 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 11 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 12 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 13 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 14 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 15 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 16 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 17 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 18 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 19 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 20 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 21 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 22 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 23 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 24 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 25 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 26 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 27 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 28 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 29 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 30 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 1-bit at position 31 on $procdff$24510 ($adff) from module systolic_array.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 1-bit at position 3 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 10 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 11 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 12 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 13 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 14 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 15 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 16 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 17 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 18 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 19 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 20 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 21 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 22 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 23 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 24 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 25 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 26 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 27 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 28 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 29 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 30 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Setting constant 0-bit at position 31 on $auto$ff.cc:337:slice$24596 ($dffe) from module systolic_array.
+Adding EN signal on $procdff$24535 ($adff) from module mac_pe (D = \weight_data, Q = \weight).
+Adding EN signal on $procdff$24530 ($adff) from module mac_pe (D = $procmux$23757_Y, Q = \psum_out).
+Adding EN signal on $procdff$24525 ($adff) from module mac_pe (D = $procmux$23762_Y, Q = \a_out).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_array..
+Finding unused cells or wires in module \mac_pe..
+Removed 267 unused cells and 2680 unused wires.
+<suppressed ~274 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+<suppressed ~2 debug messages>
+Optimizing module systolic_array.
+<suppressed ~289 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/65 on $pmux $procmux$1614.
+    dead port 2/65 on $pmux $procmux$1614.
+    dead port 3/65 on $pmux $procmux$1614.
+    dead port 4/65 on $pmux $procmux$1614.
+    dead port 5/65 on $pmux $procmux$1614.
+    dead port 6/65 on $pmux $procmux$1614.
+    dead port 7/65 on $pmux $procmux$1614.
+    dead port 9/65 on $pmux $procmux$1614.
+    dead port 10/65 on $pmux $procmux$1614.
+    dead port 11/65 on $pmux $procmux$1614.
+    dead port 12/65 on $pmux $procmux$1614.
+    dead port 13/65 on $pmux $procmux$1614.
+    dead port 14/65 on $pmux $procmux$1614.
+    dead port 15/65 on $pmux $procmux$1614.
+    dead port 17/65 on $pmux $procmux$1614.
+    dead port 18/65 on $pmux $procmux$1614.
+    dead port 19/65 on $pmux $procmux$1614.
+    dead port 20/65 on $pmux $procmux$1614.
+    dead port 21/65 on $pmux $procmux$1614.
+    dead port 22/65 on $pmux $procmux$1614.
+    dead port 23/65 on $pmux $procmux$1614.
+    dead port 25/65 on $pmux $procmux$1614.
+    dead port 26/65 on $pmux $procmux$1614.
+    dead port 27/65 on $pmux $procmux$1614.
+    dead port 28/65 on $pmux $procmux$1614.
+    dead port 29/65 on $pmux $procmux$1614.
+    dead port 30/65 on $pmux $procmux$1614.
+    dead port 31/65 on $pmux $procmux$1614.
+    dead port 33/65 on $pmux $procmux$1614.
+    dead port 34/65 on $pmux $procmux$1614.
+    dead port 35/65 on $pmux $procmux$1614.
+    dead port 36/65 on $pmux $procmux$1614.
+    dead port 37/65 on $pmux $procmux$1614.
+    dead port 38/65 on $pmux $procmux$1614.
+    dead port 39/65 on $pmux $procmux$1614.
+    dead port 41/65 on $pmux $procmux$1614.
+    dead port 42/65 on $pmux $procmux$1614.
+    dead port 43/65 on $pmux $procmux$1614.
+    dead port 44/65 on $pmux $procmux$1614.
+    dead port 45/65 on $pmux $procmux$1614.
+    dead port 46/65 on $pmux $procmux$1614.
+    dead port 47/65 on $pmux $procmux$1614.
+    dead port 49/65 on $pmux $procmux$1614.
+    dead port 50/65 on $pmux $procmux$1614.
+    dead port 51/65 on $pmux $procmux$1614.
+    dead port 52/65 on $pmux $procmux$1614.
+    dead port 53/65 on $pmux $procmux$1614.
+    dead port 54/65 on $pmux $procmux$1614.
+    dead port 55/65 on $pmux $procmux$1614.
+    dead port 57/65 on $pmux $procmux$1614.
+    dead port 58/65 on $pmux $procmux$1614.
+    dead port 59/65 on $pmux $procmux$1614.
+    dead port 60/65 on $pmux $procmux$1614.
+    dead port 61/65 on $pmux $procmux$1614.
+    dead port 62/65 on $pmux $procmux$1614.
+    dead port 63/65 on $pmux $procmux$1614.
+Removed 56 multiplexer ports.
+<suppressed ~10672 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_pe.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_pe'.
+Computing hashes of 11 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+Computing hashes of 10 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\systolic_array'.
+Computing hashes of 2708 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Computing hashes of 2455 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+<suppressed ~759 debug messages>
+Removed a total of 254 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_pe..
+Finding unused cells or wires in module \systolic_array..
+Removed 0 unused cells and 478 unused wires.
+<suppressed ~2 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module systolic_array.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10674 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_pe.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_pe'.
+Computing hashes of 10 cells of `\mac_pe'.
+Finding duplicate cells in `\mac_pe'.
+Finding identical cells in module `\systolic_array'.
+Computing hashes of 2455 cells of `\systolic_array'.
+Finding duplicate cells in `\systolic_array'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_pe..
+Finding unused cells or wires in module \systolic_array..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_pe.
+Optimizing module systolic_array.
+
+5.23. Finished fast OPT passes. (There is nothing left to do.)
+
+6. Executing CHECK pass (checking for obvious problems).
+Checking module mac_pe...
+Checking module systolic_array...
+Found and reported 0 problems.
+
+7. Printing statistics.
+
+=== mac_pe ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       19 wires
+      262 wire bits
+       13 public wires
+      149 public wire bits
+       10 ports
+       93 port bits
+       10 cells
+        1   $add
+        3   $adffe
+        1   $mul
+        4   $mux
+        1   $reduce_bool
+
+=== systolic_array ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     2558 wires
+    39572 wire bits
+      286 public wires
+     5538 public wire bits
+       11 ports
+       59 port bits
+     2391 cells
+       15   $add
+        2   $adff
+      129   $adffe
+     1023   $eq
+       16   $ge
+       85   $logic_and
+       21   $logic_not
+       16   $lt
+      993   $mux
+        2   $not
+        9   $pmux
+       64   $reduce_and
+        1   $reduce_bool
+       15   $sub
+       64 submodules
+       64   mac_pe
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+     3031 systolic_array
+       10 mac_pe
+
+        +----------Count including submodules.
+        | 
+     3774 wires
+    56340 wire bits
+     1118 public wires
+    15074 public wire bits
+      651 ports
+     6011 port bits
+        - memories
+        - memory bits
+        - processes
+     3031 cells
+       79   $add
+        2   $adff
+      321   $adffe
+     1023   $eq
+       16   $ge
+       85   $logic_and
+       21   $logic_not
+       16   $lt
+       64   $mul
+     1249   $mux
+        2   $not
+        9   $pmux
+       64   $reduce_and
+       65   $reduce_bool
+       15   $sub
+       64 submodules
+       64   mac_pe
+

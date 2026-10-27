@@ -8,7 +8,7 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / 'build/orfs'
-NAME = 'asap7/systolic_array_4x4/base'
+NAME = 'asap7/systolic_array_8x8/base'
 
 
 def main():

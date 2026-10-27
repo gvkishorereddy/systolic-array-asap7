@@ -1,17 +1,20 @@
 {
   "status": "PASS",
+  "array_size": "8x8",
+  "dataflow": "weight-stationary",
   "seed": 20261027,
   "matrices": 256,
-  "output_checks": 4096,
+  "output_checks": 16384,
   "directed_matrices": 8,
   "random_matrices": 248,
-  "compute_cycles": 10,
+  "stationary_weight_reuse_cases": 124,
+  "compute_cycles": 23,
   "simulation_clock_period_ns": 20,
-  "simulation_compute_latency_ns": 200,
+  "simulation_compute_latency_ns": 460,
   "note": "Simulation clock is a stimulus setting, not physical timing signoff or Fmax.",
   "simulator": "Icarus Verilog version 13.0 (stable) (v13_0)",
   "rtl_sha256": {
-    "rtl/mac_pe.sv": "e462105e3b9fe5180926362198e1447785664a21080b2a641ce0bd0821863832",
-    "rtl/systolic_array.sv": "bce1bb74be3ca1d0bf3ddc385c808b9dfbe9fb5e752f14d64006e13dac1934e8"
+    "rtl/mac_pe.sv": "1e2a09432362f15b52465545fe5a44f6d2399898f0ec0c35990c47054fb30db8",
+    "rtl/systolic_array.sv": "6817bbdfa9e78e72455ede0356a46c27e715982b1590aa803ea6a87d261049a6"
   }
 }

@@ -2,6 +2,6 @@ $ iverilog -g2012 -Wall -s tb_systolic -o build/sim rtl/mac_pe.sv rtl/systolic_a
 
 
 $ vvp build/sim
-PASS matrices=256 output_checks=4096 compute_cycles=10 seed=20261027
-PASS control: reset, reset-during-compute, busy-write/start rejection, repeated operations, done pulse
-tb/tb_systolic.sv:78: $finish called at 231271000 (1ps)
+PASS matrices=256 output_checks=16384 compute_cycles=23 seed=20261027
+PASS control: reset, reset-during-compute, busy-A/B-write/start rejection, weight reuse, repeated operations, done pulse
+tb/tb_systolic.sv:80: $finish called at 642791000 (1ps)
